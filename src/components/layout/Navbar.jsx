@@ -53,14 +53,6 @@ export default function Navbar() {
     }
   };
 
-  const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Products', href: '/products' },
-    { name: 'Men', href: '/products/men' },
-    { name: 'Women', href: '/products/women' },
-    { name: 'Kids', href: '/products/kids' }
-  ];
-
   return (
     <>
       <header className="sticky top-0 z-40 w-full border-b border-zinc-100 bg-white/80 backdrop-blur-md">
@@ -81,30 +73,68 @@ export default function Navbar() {
               <Image 
                 src="/images/logo-navbar.png" 
                 alt="VESTRA logo"
-                width={38}
-                height={38}
-                className="object-contain"
+                width={140}
+                height={40}
+                className="object-contain h-10 w-auto"
                 priority
               />
             </Link>
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex lg:gap-x-8">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`text-sm font-semibold transition-colors duration-200 py-2 hover:text-primary ${
-                    isActive ? 'text-dark border-b-2 border-primary font-bold' : 'text-zinc-600'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
+          <nav className="hidden lg:flex lg:gap-x-8 items-center">
+            <Link
+              href="/"
+              className={`text-sm font-semibold transition-colors duration-200 py-2 hover:text-primary ${
+                pathname === '/' ? 'text-dark border-b-2 border-primary font-bold' : 'text-zinc-600'
+              }`}
+            >
+              Home
+            </Link>
+
+            <Link
+              href="/products"
+              className={`text-sm font-semibold transition-colors duration-200 py-2 hover:text-primary ${
+                pathname === '/products' ? 'text-dark border-b-2 border-primary font-bold' : 'text-zinc-600'
+              }`}
+            >
+              Products
+            </Link>
+
+            {/* Categories Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-1 text-sm font-semibold text-zinc-600 hover:text-primary transition py-2 cursor-pointer focus:outline-none">
+                Categories
+                <svg className="w-3.5 h-3.5 mt-0.5 text-zinc-400 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute left-0 mt-0 w-44 rounded-lg shadow-xl bg-white border border-zinc-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <Link href="/products/men" className="block px-4 py-2 text-sm text-dark hover:bg-zinc-50 font-body transition-colors">Men</Link>
+                  <Link href="/products/women" className="block px-4 py-2 text-sm text-dark hover:bg-zinc-50 font-body transition-colors">Women</Link>
+                  <Link href="/products/kids" className="block px-4 py-2 text-sm text-dark hover:bg-zinc-50 font-body transition-colors">Kids</Link>
+                </div>
+              </div>
+            </div>
+
+            <Link
+              href="/about"
+              className={`text-sm font-semibold transition-colors duration-200 py-2 hover:text-primary ${
+                pathname === '/about' ? 'text-dark border-b-2 border-primary font-bold' : 'text-zinc-600'
+              }`}
+            >
+              About Us
+            </Link>
+
+            <Link
+              href="/contact"
+              className={`text-sm font-semibold transition-colors duration-200 py-2 hover:text-primary ${
+                pathname === '/contact' ? 'text-dark border-b-2 border-primary font-bold' : 'text-zinc-600'
+              }`}
+            >
+              Contact Us
+            </Link>
           </nav>
 
           {/* Icons Action Row */}
@@ -196,9 +226,9 @@ export default function Navbar() {
                 <Image 
                   src="/images/logo-navbar.png" 
                   alt="VESTRA logo"
-                  width={34}
-                  height={34}
-                  className="object-contain"
+                  width={110}
+                  height={32}
+                  className="object-contain h-8 w-auto"
                 />
               </Link>
               <button 
@@ -212,21 +242,73 @@ export default function Navbar() {
 
             {/* Menu Links */}
             <div className="space-y-4 px-4 py-6 border-b border-zinc-100">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
+              <Link
+                href="/"
+                onClick={() => setIsMenuOpen(false)}
+                className={`block text-base font-semibold py-1 transition-colors ${
+                  pathname === '/' ? 'text-primary' : 'text-dark hover:text-primary'
+                }`}
+              >
+                Home
+              </Link>
+              
+              <Link
+                href="/products"
+                onClick={() => setIsMenuOpen(false)}
+                className={`block text-base font-semibold py-1 transition-colors ${
+                  pathname === '/products' ? 'text-primary' : 'text-dark hover:text-primary'
+                }`}
+              >
+                Products
+              </Link>
+
+              {/* Mobile Categories Group */}
+              <div className="py-1">
+                <span className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 font-heading">Categories</span>
+                <div className="pl-3 space-y-2 border-l border-zinc-150">
                   <Link
-                    key={link.name}
-                    href={link.href}
+                    href="/products/men"
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block text-base font-semibold py-2 transition-colors ${
-                      isActive ? 'text-primary' : 'text-dark hover:text-primary'
-                    }`}
+                    className="block text-sm font-semibold text-zinc-600 hover:text-primary transition-colors"
                   >
-                    {link.name}
+                    Men
                   </Link>
-                );
-              })}
+                  <Link
+                    href="/products/women"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block text-sm font-semibold text-zinc-600 hover:text-primary transition-colors"
+                  >
+                    Women
+                  </Link>
+                  <Link
+                    href="/products/kids"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block text-sm font-semibold text-zinc-600 hover:text-primary transition-colors"
+                  >
+                    Kids
+                  </Link>
+                </div>
+              </div>
+
+              <Link
+                href="/about"
+                onClick={() => setIsMenuOpen(false)}
+                className={`block text-base font-semibold py-1 transition-colors ${
+                  pathname === '/about' ? 'text-primary' : 'text-dark hover:text-primary'
+                }`}
+              >
+                About Us
+              </Link>
+
+              <Link
+                href="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className={`block text-base font-semibold py-1 transition-colors ${
+                  pathname === '/contact' ? 'text-primary' : 'text-dark hover:text-primary'
+                }`}
+              >
+                Contact Us
+              </Link>
             </div>
 
             {/* Footer details in menu */}
