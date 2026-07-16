@@ -68,13 +68,13 @@ export default function Navbar() {
           </button>
 
           {/* Logo */}
-          <div className="flex lg:flex-1 justify-center lg:justify-start">
+          <div className="flex lg:flex-1 justify-start">
             <Link href="/" className="flex items-center">
               <Image 
-                src="/images/logo-navbar.png" 
+                src="/images/logo-navbar-trans.png" 
                 alt="VESTRA logo"
-                width={140}
-                height={40}
+                width={150}
+                height={42}
                 className="object-contain h-10 w-auto"
                 priority
               />
@@ -222,12 +222,12 @@ export default function Navbar() {
           {/* Drawer Menu */}
           <div className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl animate-slide-in">
             <div className="flex h-16 items-center justify-between px-4 border-b border-zinc-100">
-              <Link href="/" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex items-center">
                 <Image 
-                  src="/images/logo-navbar.png" 
+                  src="/images/logo-navbar-trans.png" 
                   alt="VESTRA logo"
-                  width={110}
-                  height={32}
+                  width={120}
+                  height={34}
                   className="object-contain h-8 w-auto"
                 />
               </Link>

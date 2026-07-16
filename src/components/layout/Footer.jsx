@@ -40,16 +40,19 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-6">
-              <div className="inline-block p-1 bg-white rounded-full">
+            <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
+              <div className="p-1 bg-white rounded-lg flex items-center justify-center">
                 <Image 
                   src="/images/logo-footer.png" 
                   alt="VESTRA logo"
-                  width={140}
-                  height={42}
-                  className="object-contain"
+                  width={44}
+                  height={44}
+                  className="object-contain rounded-md"
                 />
               </div>
+              <span className="font-heading font-black text-2xl tracking-[0.15em] text-white uppercase group-hover:text-primary transition-colors">
+                VESTRA
+              </span>
             </Link>
             <p className="text-zinc-400 text-sm max-w-sm mb-6 leading-relaxed">
               We don't just sell clothes. We sell fashion. VESTRA is committed to providing high-quality, modern, and minimalist wardrobe essentials that empower your identity.
