@@ -7,84 +7,106 @@ import { useState } from 'react';
 export default function ProductCard({ product }) {
   const [wishlisted, setWishlisted] = useState(false);
 
-  return (
-    <div className="group relative flex flex-col bg-white">
-      {/* Image wrapper */}
-      <Link href={`/products/${product.id}`} className="relative block overflow-hidden bg-[#F5F5F5] aspect-[3/4]">
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-        />
+  const firstColor = product.colors?.[0] ?? null;
 
-        {/* Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5">
-          {product.isNew && (
-            <span className="bg-[#C9FA75] text-[#111111] text-[10px] font-heading font-bold tracking-widest uppercase px-2.5 py-1 rounded-full">
-              New
-            </span>
-          )}
+  return (
+    <div className="group flex flex-col bg-white">
+
+      {/* Card image container */}
+      <div className="relative rounded-2xl bg-[#F0F0F0] overflow-hidden aspect-[3/4]">
+
+        {/* Product image */}
+        <Link href={`/products/${product.id}`} className="block w-full h-full">
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          />
+        </Link>
+
+        {/* Top-left badges */}
+        <div className="absolute top-3 left-3 flex items-center gap-2">
           {product.discountPercent > 0 && (
-            <span className="bg-[#111111] text-white text-[10px] font-heading font-bold tracking-widest uppercase px-2.5 py-1 rounded-full">
+            <span className="bg-[#111111] text-white text-[11px] font-heading font-bold tracking-wide px-3 py-1.5 rounded-full">
               -{product.discountPercent}%
             </span>
           )}
+          {firstColor && (
+            <span className="hidden sm:inline bg-white/80 backdrop-blur-sm text-[#111111] text-[11px] font-body font-medium px-3 py-1.5 rounded-full">
+              {firstColor}
+            </span>
+          )}
         </div>
 
-        {/* Wishlist button */}
-        <button
-          type="button"
-          onClick={(e) => {
-            e.preventDefault();
-            setWishlisted((prev) => !prev);
-          }}
-          aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
-          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:scale-110 active:scale-95"
-        >
-          <svg
-            className={`w-4 h-4 transition-colors duration-200 ${wishlisted ? 'text-red-500 fill-red-500' : 'text-zinc-400 fill-none'}`}
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
+        {/* Bottom-right action buttons */}
+        <div className="absolute bottom-3 right-3 flex items-center gap-1.5 sm:gap-2">
+          {/* Wishlist */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              setWishlisted((prev) => !prev);
+            }}
+            aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm hover:bg-white transition-colors duration-200 active:scale-95"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-          </svg>
-        </button>
+            <svg
+              className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-200 ${wishlisted ? 'text-[#C9FA75] fill-[#C9FA75]' : 'text-[#111111] fill-none'}`}
+              stroke="currentColor"
+              strokeWidth="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </button>
 
-        {/* Quick-view slide-up overlay */}
-        <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+          {/* Quick view / Add to cart */}
           <Link
             href={`/products/${product.id}`}
-            className="block w-full bg-[#111111] text-white text-center text-xs font-heading font-bold tracking-widest uppercase py-3 hover:bg-[#C9FA75] hover:text-[#111111] transition-colors duration-200"
+            aria-label="Quick view"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm hover:bg-white transition-colors duration-200 active:scale-95"
           >
-            Quick View
+            <svg
+              className="w-4 h-4 sm:w-5 sm:h-5 text-[#111111]"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
           </Link>
         </div>
-      </Link>
+      </div>
 
-      {/* Info */}
-      <div className="pt-3 pb-1">
-        <p className="text-[10px] font-heading font-semibold tracking-widest text-zinc-400 uppercase mb-0.5">
-          {product.subCategory}
-        </p>
-        <Link href={`/products/${product.id}`}>
-          <h3 className="font-body text-sm font-semibold text-[#111111] truncate hover:text-zinc-600 transition-colors">
-            {product.name}
-          </h3>
-        </Link>
-        <div className="flex items-center gap-2 mt-1">
-          <span className="font-heading font-bold text-[#111111] text-sm">
-            ৳{product.price.toLocaleString()}
+      {/* Info below card */}
+      <div className="pt-3 px-0.5">
+        {/* Row 1: brand + old price */}
+        <div className="flex items-center justify-between mb-0.5">
+          <span className="text-[11px] font-heading font-semibold tracking-widest text-zinc-400 uppercase">
+            {product.brand}
           </span>
           {product.oldPrice && (
-            <span className="font-body text-xs text-zinc-400 line-through">
+            <span className="text-[11px] font-body text-zinc-400 line-through">
               ৳{product.oldPrice.toLocaleString()}
             </span>
           )}
         </div>
+        {/* Row 2: name + price */}
+        <div className="flex items-end justify-between gap-2">
+          <Link href={`/products/${product.id}`}>
+            <h3 className="font-heading font-bold text-[#111111] text-sm sm:text-base leading-snug hover:text-zinc-600 transition-colors line-clamp-2">
+              {product.name}
+            </h3>
+          </Link>
+          <span className="font-heading font-black text-[#111111] text-sm sm:text-base whitespace-nowrap shrink-0">
+            ৳{product.price.toLocaleString()}
+          </span>
+        </div>
       </div>
+
     </div>
   );
 }
