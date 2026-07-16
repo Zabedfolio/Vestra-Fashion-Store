@@ -9,11 +9,10 @@ export const products = [
     price: 1490,
     oldPrice: 1990,
     discountPercent: 25,
-    image: "/images/products/product-1.jpg",
+    image: "/images/products/men/Classic Cotton Panjabi.png",
     gallery: [
-      "/images/products/product-1.jpg",
-      "/images/products/product-1-g1.jpg",
-      "/images/products/product-1-g2.jpg"
+      "/images/products/men/Classic Cotton Panjabi.png",
+      "/images/products/men/Classic Cotton Panjabi.png"
     ],
     rating: 4.8,
     reviewCount: 42,
@@ -32,11 +31,10 @@ export const products = [
     price: 1850,
     oldPrice: 2450,
     discountPercent: 24,
-    image: "/images/products/product-2.jpg",
+    image: "/images/products/men/Premium Linen Shirt.png",
     gallery: [
-      "/images/products/product-2.jpg",
-      "/images/products/product-2-g1.jpg",
-      "/images/products/product-2-g2.jpg"
+      "/images/products/men/Premium Linen Shirt.png",
+      "/images/products/men/Premium Linen Shirt.png"
     ],
     rating: 4.6,
     reviewCount: 31,
@@ -55,11 +53,10 @@ export const products = [
     price: 2200,
     oldPrice: 2990,
     discountPercent: 26,
-    image: "/images/products/product-3.jpg",
+    image: "/images/products/men/Oversized Streetwear Hoodie.png",
     gallery: [
-      "/images/products/product-3.jpg",
-      "/images/products/product-3-g1.jpg",
-      "/images/products/product-3-g2.jpg"
+      "/images/products/men/Oversized Streetwear Hoodie.png",
+      "/images/products/men/Oversized Streetwear Hoodie.png"
     ],
     rating: 4.9,
     reviewCount: 57,
@@ -78,11 +75,10 @@ export const products = [
     price: 1590,
     oldPrice: 2190,
     discountPercent: 27,
-    image: "/images/products/product-4.jpg",
+    image: "/images/products/men/Slim Fit Utility Chino.png",
     gallery: [
-      "/images/products/product-4.jpg",
-      "/images/products/product-4-g1.jpg",
-      "/images/products/product-4-g2.jpg"
+      "/images/products/men/Slim Fit Utility Chino.png",
+      "/images/products/men/Slim Fit Utility Chino.png"
     ],
     rating: 4.4,
     reviewCount: 25,
@@ -101,11 +97,10 @@ export const products = [
     price: 2890,
     oldPrice: 3890,
     discountPercent: 25,
-    image: "/images/products/product-5.jpg",
+    image: "/images/products/men/Tailored Denim Jacket.png",
     gallery: [
-      "/images/products/product-5.jpg",
-      "/images/products/product-5-g1.jpg",
-      "/images/products/product-5-g2.jpg"
+      "/images/products/men/Tailored Denim Jacket.png",
+      "/images/products/men/Tailored Denim Jacket.png"
     ],
     rating: 4.7,
     reviewCount: 18,
@@ -124,11 +119,10 @@ export const products = [
     price: 1690,
     oldPrice: 1990,
     discountPercent: 15,
-    image: "/images/products/product-6.jpg",
+    image: "/images/products/men/Graphic Fleece Sweatshirt.png",
     gallery: [
-      "/images/products/product-6.jpg",
-      "/images/products/product-6-g1.jpg",
-      "/images/products/product-6-g2.jpg"
+      "/images/products/men/Graphic Fleece Sweatshirt.png",
+      "/images/products/men/Graphic Fleece Sweatshirt.png"
     ],
     rating: 4.5,
     reviewCount: 19,
@@ -147,11 +141,10 @@ export const products = [
     price: 990,
     oldPrice: 1390,
     discountPercent: 28,
-    image: "/images/products/product-7.jpg",
+    image: "/images/products/men/Lightweight Summer Polo.png",
     gallery: [
-      "/images/products/product-7.jpg",
-      "/images/products/product-7-g1.jpg",
-      "/images/products/product-7-g2.jpg"
+      "/images/products/men/Lightweight Summer Polo.png",
+      "/images/products/men/Lightweight Summer Polo.png"
     ],
     rating: 4.3,
     reviewCount: 68,
@@ -170,11 +163,10 @@ export const products = [
     price: 1990,
     oldPrice: 2690,
     discountPercent: 26,
-    image: "/images/products/product-8.jpg",
+    image: "/images/products/men/Relaxed Cargo Pants.png",
     gallery: [
-      "/images/products/product-8.jpg",
-      "/images/products/product-8-g1.jpg",
-      "/images/products/product-8-g2.jpg"
+      "/images/products/men/Relaxed Cargo Pants.png",
+      "/images/products/men/Relaxed Cargo Pants.png"
     ],
     rating: 4.5,
     reviewCount: 22,
@@ -193,11 +185,10 @@ export const products = [
     price: 3490,
     oldPrice: 4490,
     discountPercent: 22,
-    image: "/images/products/product-9.jpg",
+    image: "/images/products/men/Classic Leather Loafers.png",
     gallery: [
-      "/images/products/product-9.jpg",
-      "/images/products/product-9-g1.jpg",
-      "/images/products/product-9-g2.jpg"
+      "/images/products/men/Classic Leather Loafers.png",
+      "/images/products/men/Classic Leather Loafers.png"
     ],
     rating: 4.7,
     reviewCount: 14,
@@ -216,11 +207,10 @@ export const products = [
     price: 2490,
     oldPrice: 3290,
     discountPercent: 24,
-    image: "/images/products/product-10.jpg",
+    image: "/images/products/men/Knitted Crewneck Sweater.png",
     gallery: [
-      "/images/products/product-10.jpg",
-      "/images/products/product-10-g1.jpg",
-      "/images/products/product-10-g2.jpg"
+      "/images/products/men/Knitted Crewneck Sweater.png",
+      "/images/products/men/Knitted Crewneck Sweater.png"
     ],
     rating: 4.8,
     reviewCount: 27,
@@ -239,11 +229,10 @@ export const products = [
     price: 1290,
     oldPrice: 1790,
     discountPercent: 27,
-    image: "/images/products/product-11.jpg",
+    image: "/images/products/men/Athletic Lounge Joggers.png",
     gallery: [
-      "/images/products/product-11.jpg",
-      "/images/products/product-11-g1.jpg",
-      "/images/products/product-11-g2.jpg"
+      "/images/products/men/Athletic Lounge Joggers.png",
+      "/images/products/men/Athletic Lounge Joggers.png"
     ],
     rating: 4.5,
     reviewCount: 39,
@@ -254,7 +243,7 @@ export const products = [
     description: "Premium French Terry joggers featuring an elastic waistband with drawstrings, zipper pockets, and tapered ribbed cuffs. Ideal for workouts or off-duty comfort."
   },
 
-  // WOMEN SECTION (11 products)
+  // WOMEN SECTION (10 products)
   {
     id: 12,
     name: "Floral Tiered Summer Dress",
@@ -264,11 +253,10 @@ export const products = [
     price: 2190,
     oldPrice: 2890,
     discountPercent: 24,
-    image: "/images/products/product-12.jpg",
+    image: "/images/products/women/Floral Tiered Summer Dress.png",
     gallery: [
-      "/images/products/product-12.jpg",
-      "/images/products/product-12-g1.jpg",
-      "/images/products/product-12-g2.jpg"
+      "/images/products/women/Floral Tiered Summer Dress.png",
+      "/images/products/women/Floral Tiered Summer Dress.png"
     ],
     rating: 4.7,
     reviewCount: 45,
@@ -287,11 +275,10 @@ export const products = [
     price: 3200,
     oldPrice: 4200,
     discountPercent: 23,
-    image: "/images/products/product-13.jpg",
+    image: "/images/products/women/Oversized Linen Blazer.png",
     gallery: [
-      "/images/products/product-13.jpg",
-      "/images/products/product-13-g1.jpg",
-      "/images/products/product-13-g2.jpg"
+      "/images/products/women/Oversized Linen Blazer.png",
+      "/images/products/women/Oversized Linen Blazer.png"
     ],
     rating: 4.8,
     reviewCount: 16,
@@ -310,11 +297,10 @@ export const products = [
     price: 1890,
     oldPrice: 2490,
     discountPercent: 24,
-    image: "/images/products/product-14.jpg",
+    image: "/images/products/women/High-Rise Wide Leg Denim.png",
     gallery: [
-      "/images/products/product-14.jpg",
-      "/images/products/product-14-g1.jpg",
-      "/images/products/product-14-g2.jpg"
+      "/images/products/women/High-Rise Wide Leg Denim.png",
+      "/images/products/women/High-Rise Wide Leg Denim.png"
     ],
     rating: 4.5,
     reviewCount: 34,
@@ -333,11 +319,10 @@ export const products = [
     price: 4990,
     oldPrice: 6990,
     discountPercent: 28,
-    image: "/images/products/product-15.jpg",
+    image: "/images/products/women/Premium Silk Saree.png",
     gallery: [
-      "/images/products/product-15.jpg",
-      "/images/products/product-15-g1.jpg",
-      "/images/products/product-15-g2.jpg"
+      "/images/products/women/Premium Silk Saree.png",
+      "/images/products/women/Premium Silk Saree.png"
     ],
     rating: 4.9,
     reviewCount: 12,
@@ -356,11 +341,10 @@ export const products = [
     price: 790,
     oldPrice: 1190,
     discountPercent: 33,
-    image: "/images/products/product-16.jpg",
+    image: "/images/products/women/Ribbed Mock Neck Top.png",
     gallery: [
-      "/images/products/product-16.jpg",
-      "/images/products/product-16-g1.jpg",
-      "/images/products/product-16-g2.jpg"
+      "/images/products/women/Ribbed Mock Neck Top.png",
+      "/images/products/women/Ribbed Mock Neck Top.png"
     ],
     rating: 4.4,
     reviewCount: 52,
@@ -379,11 +363,10 @@ export const products = [
     price: 1590,
     oldPrice: 2190,
     discountPercent: 27,
-    image: "/images/products/product-17.jpg",
+    image: "/images/products/women/Embroidered Cotton Kurti.png",
     gallery: [
-      "/images/products/product-17.jpg",
-      "/images/products/product-17-g1.jpg",
-      "/images/products/product-17-g2.jpg"
+      "/images/products/women/Embroidered Cotton Kurti.png",
+      "/images/products/women/Embroidered Cotton Kurti.png"
     ],
     rating: 4.6,
     reviewCount: 29,
@@ -402,11 +385,10 @@ export const products = [
     price: 1690,
     oldPrice: 2290,
     discountPercent: 26,
-    image: "/images/products/product-18.jpg",
+    image: "/images/products/women/Pleated Satin Midi Skirt.png",
     gallery: [
-      "/images/products/product-18.jpg",
-      "/images/products/product-18-g1.jpg",
-      "/images/products/product-18-g2.jpg"
+      "/images/products/women/Pleated Satin Midi Skirt.png",
+      "/images/products/women/Pleated Satin Midi Skirt.png"
     ],
     rating: 4.7,
     reviewCount: 21,
@@ -425,11 +407,10 @@ export const products = [
     price: 2390,
     oldPrice: 2990,
     discountPercent: 20,
-    image: "/images/products/product-19.jpg",
+    image: "/images/products/women/Cozy Knit Cardigan.png",
     gallery: [
-      "/images/products/product-19.jpg",
-      "/images/products/product-19-g1.jpg",
-      "/images/products/product-19-g2.jpg"
+      "/images/products/women/Cozy Knit Cardigan.png",
+      "/images/products/women/Cozy Knit Cardigan.png"
     ],
     rating: 4.8,
     reviewCount: 19,
@@ -448,11 +429,10 @@ export const products = [
     price: 1890,
     oldPrice: 2490,
     discountPercent: 24,
-    image: "/images/products/product-20.jpg",
+    image: "/images/products/women/Strappy Leather Sandals.png",
     gallery: [
-      "/images/products/product-20.jpg",
-      "/images/products/product-20-g1.jpg",
-      "/images/products/product-20-g2.jpg"
+      "/images/products/women/Strappy Leather Sandals.png",
+      "/images/products/women/Strappy Leather Sandals.png"
     ],
     rating: 4.3,
     reviewCount: 15,
@@ -471,11 +451,10 @@ export const products = [
     price: 1390,
     oldPrice: 1890,
     discountPercent: 26,
-    image: "/images/products/product-21.jpg",
+    image: "/images/products/women/Seamless Active Leggings.png",
     gallery: [
-      "/images/products/product-21.jpg",
-      "/images/products/product-21-g1.jpg",
-      "/images/products/product-21-g2.jpg"
+      "/images/products/women/Seamless Active Leggings.png",
+      "/images/products/women/Seamless Active Leggings.png"
     ],
     rating: 4.6,
     reviewCount: 40,
@@ -484,29 +463,6 @@ export const products = [
     inStock: true,
     isNew: false,
     description: "High-waisted compression leggings in sweat-wicking knit fabric. Seamless construction prevents chafing during yoga or high-intensity training."
-  },
-  {
-    id: 22,
-    name: "Crop Utility Denim Vest",
-    brand: "VESTRA",
-    category: "Women",
-    subCategory: "Vests",
-    price: 1490,
-    oldPrice: 1990,
-    discountPercent: 25,
-    image: "/images/products/product-22.jpg",
-    gallery: [
-      "/images/products/product-22.jpg",
-      "/images/products/product-22-g1.jpg",
-      "/images/products/product-22-g2.jpg"
-    ],
-    rating: 4.4,
-    reviewCount: 8,
-    colors: ["Vintage Acid Wash"],
-    sizes: ["S", "M", "L"],
-    inStock: true,
-    isNew: true,
-    description: "Cropped denim waistcoat vest with button closure, raw frayed armholes, and buttoned chest flap pockets. Perfect for adding edge to casual fits."
   },
 
   // KIDS SECTION (11 products)
@@ -519,11 +475,10 @@ export const products = [
     price: 490,
     oldPrice: 790,
     discountPercent: 37,
-    image: "/images/products/product-23.jpg",
+    image: "/images/products/child/Printed Cotton T-Shirt.png",
     gallery: [
-      "/images/products/product-23.jpg",
-      "/images/products/product-23-g1.jpg",
-      "/images/products/product-23-g2.jpg"
+      "/images/products/child/Printed Cotton T-Shirt.png",
+      "/images/products/child/Printed Cotton T-Shirt.png"
     ],
     rating: 4.7,
     reviewCount: 65,
@@ -542,11 +497,10 @@ export const products = [
     price: 1450,
     oldPrice: 1990,
     discountPercent: 27,
-    image: "/images/products/product-24.jpg",
+    image: "/images/products/child/Gemini_Generated_Image_295jar295jar295j (2).png",
     gallery: [
-      "/images/products/product-24.jpg",
-      "/images/products/product-24-g1.jpg",
-      "/images/products/product-24-g2.jpg"
+      "/images/products/child/Gemini_Generated_Image_295jar295jar295j (2).png",
+      "/images/products/child/Gemini_Generated_Image_295jar295jar295j (2).png"
     ],
     rating: 4.8,
     reviewCount: 22,
@@ -565,11 +519,10 @@ export const products = [
     price: 1890,
     oldPrice: 2490,
     discountPercent: 24,
-    image: "/images/products/product-25.jpg",
+    image: "/images/products/child/Pastel Layered Party Dress.png",
     gallery: [
-      "/images/products/product-25.jpg",
-      "/images/products/product-25-g1.jpg",
-      "/images/products/product-25-g2.jpg"
+      "/images/products/child/Pastel Layered Party Dress.png",
+      "/images/products/child/Pastel Layered Party Dress.png"
     ],
     rating: 4.9,
     reviewCount: 19,
@@ -588,11 +541,10 @@ export const products = [
     price: 1190,
     oldPrice: 1590,
     discountPercent: 25,
-    image: "/images/products/product-26.jpg",
+    image: "/images/products/child/Cozy Fleece Zip Hoodie.png",
     gallery: [
-      "/images/products/product-26.jpg",
-      "/images/products/product-26-g1.jpg",
-      "/images/products/product-26-g2.jpg"
+      "/images/products/child/Cozy Fleece Zip Hoodie.png",
+      "/images/products/child/Cozy Fleece Zip Hoodie.png"
     ],
     rating: 4.6,
     reviewCount: 30,
@@ -611,11 +563,10 @@ export const products = [
     price: 1290,
     oldPrice: 1790,
     discountPercent: 27,
-    image: "/images/products/product-27.jpg",
+    image: "/images/products/child/Kids Knit Crewneck Jumper.png",
     gallery: [
-      "/images/products/product-27.jpg",
-      "/images/products/product-27-g1.jpg",
-      "/images/products/product-27-g2.jpg"
+      "/images/products/child/Kids Knit Crewneck Jumper.png",
+      "/images/products/child/Kids Knit Crewneck Jumper.png"
     ],
     rating: 4.5,
     reviewCount: 14,
@@ -634,11 +585,10 @@ export const products = [
     price: 790,
     oldPrice: 1090,
     discountPercent: 27,
-    image: "/images/products/product-28.jpg",
+    image: "/images/products/child/Elastic Waist Cotton Joggers.png",
     gallery: [
-      "/images/products/product-28.jpg",
-      "/images/products/product-28-g1.jpg",
-      "/images/products/product-28-g2.jpg"
+      "/images/products/child/Elastic Waist Cotton Joggers.png",
+      "/images/products/child/Elastic Waist Cotton Joggers.png"
     ],
     rating: 4.4,
     reviewCount: 42,
@@ -657,11 +607,10 @@ export const products = [
     price: 990,
     oldPrice: 1390,
     discountPercent: 28,
-    image: "/images/products/product-29.jpg",
+    image: "/images/products/child/Canvas Slip-On Shoes.png",
     gallery: [
-      "/images/products/product-29.jpg",
-      "/images/products/product-29-g1.jpg",
-      "/images/products/product-29-g2.jpg"
+      "/images/products/child/Canvas Slip-On Shoes.png",
+      "/images/products/child/Canvas Slip-On Shoes.png"
     ],
     rating: 4.3,
     reviewCount: 25,
@@ -680,11 +629,10 @@ export const products = [
     price: 990,
     oldPrice: 1290,
     discountPercent: 23,
-    image: "/images/products/product-30.jpg",
+    image: "/images/products/child/Playful Graphic Sweatshirt.png",
     gallery: [
-      "/images/products/product-30.jpg",
-      "/images/products/product-30-g1.jpg",
-      "/images/products/product-30-g2.jpg"
+      "/images/products/child/Playful Graphic Sweatshirt.png",
+      "/images/products/child/Playful Graphic Sweatshirt.png"
     ],
     rating: 4.6,
     reviewCount: 17,
@@ -703,11 +651,10 @@ export const products = [
     price: 690,
     oldPrice: 990,
     discountPercent: 30,
-    image: "/images/products/product-31.jpg",
+    image: "/images/products/child/Gemini_Generated_Image_295jar295jar295j (10).png",
     gallery: [
-      "/images/products/product-31.jpg",
-      "/images/products/product-31-g1.jpg",
-      "/images/products/product-31-g2.jpg"
+      "/images/products/child/Gemini_Generated_Image_295jar295jar295j (10).png",
+      "/images/products/child/Gemini_Generated_Image_295jar295jar295j (10).png"
     ],
     rating: 4.5,
     reviewCount: 29,
@@ -726,11 +673,10 @@ export const products = [
     price: 890,
     oldPrice: 1190,
     discountPercent: 25,
-    image: "/images/products/product-32.jpg",
+    image: "/images/products/child/Kids Cotton Pajama Set.png",
     gallery: [
-      "/images/products/product-32.jpg",
-      "/images/products/product-32-g1.jpg",
-      "/images/products/product-32-g2.jpg"
+      "/images/products/child/Kids Cotton Pajama Set.png",
+      "/images/products/child/Kids Cotton Pajama Set.png"
     ],
     rating: 4.7,
     reviewCount: 33,
@@ -749,11 +695,10 @@ export const products = [
     price: 1590,
     oldPrice: 1990,
     discountPercent: 20,
-    image: "/images/products/product-33.jpg",
+    image: "/images/products/child/Raincoat Hooded Splash Jacket.png",
     gallery: [
-      "/images/products/product-33.jpg",
-      "/images/products/product-33-g1.jpg",
-      "/images/products/product-33-g2.jpg"
+      "/images/products/child/Raincoat Hooded Splash Jacket.png",
+      "/images/products/child/Raincoat Hooded Splash Jacket.png"
     ],
     rating: 4.8,
     reviewCount: 11,
