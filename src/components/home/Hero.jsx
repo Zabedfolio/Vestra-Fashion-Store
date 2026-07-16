@@ -38,9 +38,12 @@ export default function Hero() {
             <div>
               <Link 
                 href="/products" 
-                className="inline-flex items-center justify-center font-bold tracking-wider uppercase text-xs md:text-sm bg-primary text-dark hover:bg-white hover:text-dark shadow-md rounded-full py-4 px-8 transition-all duration-200 active:scale-95 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                className="inline-flex items-center gap-2.5 justify-center font-bold tracking-wider uppercase text-xs md:text-sm bg-primary text-dark hover:bg-white hover:text-dark shadow-md rounded-full py-4 px-8 transition-all duration-200 active:scale-95 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
               >
                 Shop Now
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
             </div>
           </div>
