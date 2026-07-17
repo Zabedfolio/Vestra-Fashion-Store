@@ -8,12 +8,37 @@ import { Magnifier, ShoppingBag, Heart, Bars, Xmark, Person } from '@gravity-ui/
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
-  const totalItems = 0; // Temporary placeholder until cart logic is redefined
-  
+  const [totalItems, setTotalItems] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [wishlistCount, setWishlistCount] = useState(0);
+
+  // Sync cart count from localStorage
+  useEffect(() => {
+    const updateCartCount = () => {
+      try {
+        const saved = localStorage.getItem('vestra_cart');
+        const items = saved ? JSON.parse(saved) : [];
+        const count = items.reduce((sum, item) => sum + item.quantity, 0);
+        setTotalItems(count);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+
+    updateCartCount();
+
+    // Listen to custom cart-change events
+    window.addEventListener('cart-change', updateCartCount);
+    // Listen to storage events for cross-tab syncing
+    window.addEventListener('storage', updateCartCount);
+
+    return () => {
+      window.removeEventListener('cart-change', updateCartCount);
+      window.removeEventListener('storage', updateCartCount);
+    };
+  }, []);
 
   // Sync wishlist count from localStorage
   useEffect(() => {
@@ -164,15 +189,18 @@ export default function Navbar() {
               )}
             </Link>
 
-            {/* Shopping Cart Link */}
-            <Link href="/cart" className="relative text-dark p-2 hover:bg-zinc-100 rounded-full transition">
+            {/* Shopping Cart Button */}
+            <button
+              onClick={() => window.dispatchEvent(new Event('open-cart'))}
+              className="relative text-dark p-2 hover:bg-zinc-100 rounded-full transition cursor-pointer"
+            >
               <ShoppingBag className="w-5 h-5" />
               {totalItems > 0 && (
                 <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold leading-none text-dark bg-primary rounded-full">
                   {totalItems}
                 </span>
               )}
-            </Link>
+            </button>
           </div>
         </div>
       </header>

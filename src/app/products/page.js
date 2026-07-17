@@ -10,9 +10,12 @@ function ProductsContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get('category') || 'All';
 
+  // Compute dynamic max price limit from data list
+  const maxPriceLimit = products.length > 0 ? Math.max(...products.map((p) => p.price)) : 3000;
+
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
-  const [maxPriceFilter, setMaxPriceFilter] = useState(3000);
+  const [maxPriceFilter, setMaxPriceFilter] = useState(maxPriceLimit);
   
   const productsPerPage = 12;
   const categories = ['All', 'Men', 'Women', 'Kids'];
@@ -83,7 +86,7 @@ function ProductsContent() {
               <input
                 type="range"
                 min="0"
-                max="3000"
+                max={maxPriceLimit}
                 value={maxPriceFilter}
                 onChange={(e) => {
                   setMaxPriceFilter(Number(e.target.value));

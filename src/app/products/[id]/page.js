@@ -8,6 +8,7 @@ import toast from 'react-hot-toast';
 import { products } from '../../../data/products';
 import ProductCard from '../../../components/ui/ProductCard';
 import ProductUnavailable from '../../../components/ui/ProductUnavailable';
+import { addToCart } from '../../../utils/cart';
 
 export default function ProductDetailPage() {
   // 1. Get dynamic product ID from URL params simply
@@ -225,7 +226,7 @@ export default function ProductDetailPage() {
               {/* Add to Cart */}
               <button
                 type="button"
-                onClick={() => toast.success(`Added ${quantity} x ${product.name} to cart!`)}
+                onClick={() => addToCart(product, quantity, selectedColor, selectedSize)}
                 className="w-full bg-dark text-white hover:bg-[#C9FA75] hover:text-dark py-4 rounded-xl font-heading font-bold tracking-widest text-xs uppercase transition-colors duration-200 cursor-pointer flex items-center justify-center gap-2"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
