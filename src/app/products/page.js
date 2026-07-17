@@ -1,13 +1,17 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { products } from '../../data/products';
 import ProductCard from '../../components/ui/ProductCard';
 
-export default function ProductsPage() {
-  // 1. Basic state variables
+// Inner component — safe to use useSearchParams() here
+function ProductsContent() {
+  const searchParams = useSearchParams();
+  const initialCategory = searchParams.get('category') || 'All';
+
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [maxPriceFilter, setMaxPriceFilter] = useState(3000);
   
   const productsPerPage = 12;
@@ -170,5 +174,18 @@ export default function ProductsPage() {
 
       </div>
     </main>
+  );
+}
+
+// Default export wraps in Suspense — required by Next.js when using useSearchParams
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={
+      <main className="w-full bg-white py-16 sm:py-24 min-h-[60vh] flex items-center justify-center">
+        <p className="font-heading font-bold text-zinc-300 uppercase tracking-widest text-sm">Loading…</p>
+      </main>
+    }>
+      <ProductsContent />
+    </Suspense>
   );
 }

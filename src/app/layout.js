@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import ToasterProvider from "../components/ui/ToasterProvider";
 
 export const metadata = {
   title: "VESTRA | Modern Premium Fashion Store",
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-body min-h-full flex flex-col antialiased bg-white">
+        <ToasterProvider />
         <Navbar />
         <main className="flex-grow flex flex-col">
           {children}

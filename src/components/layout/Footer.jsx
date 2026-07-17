@@ -15,9 +15,9 @@ export default function Footer() {
   const footerLinks = {
     shop: [
       { name: "All Products", href: "/products" },
-      { name: "Men's Collection", href: "/products/men" },
-      { name: "Women's Collection", href: "/products/women" },
-      { name: "Kids' Collection", href: "/products/kids" },
+      { name: "Men's Collection", href: "/products?category=Men" },
+      { name: "Women's Collection", href: "/products?category=Women" },
+      { name: "Kids' Collection", href: "/products?category=Kids" },
     ],
     support: [
       { name: "FAQ", href: "#" },

@@ -23,7 +23,7 @@ export default function CategoryGrid() {
           {categories.map((category) => (
             <Link 
               key={category.id} 
-              href={`/products/${category.slug}`}
+              href={`/products?category=${category.name}`}
               className="group flex flex-col items-center text-center cursor-pointer"
             >
               {/* Circular Image Container */}

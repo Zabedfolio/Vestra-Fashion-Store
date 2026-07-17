@@ -7,7 +7,7 @@ import ProductCard from '../ui/ProductCard';
 const sections = [
   {
     category: 'Men',
-    href: '/products/men',
+    href: '/products?category=Men',
     eyebrow: 'Built for the bold',
     headline: 'Made for Men',
     accent: 'Men',
@@ -15,7 +15,7 @@ const sections = [
   },
   {
     category: 'Women',
-    href: '/products/women',
+    href: '/products?category=Women',
     eyebrow: 'Effortless & elegant',
     headline: 'Crafted for Women',
     accent: 'Women',
@@ -23,7 +23,7 @@ const sections = [
   },
   {
     category: 'Kids',
-    href: '/products/kids',
+    href: '/products?category=Kids',
     eyebrow: 'Little fits, big style',
     headline: 'Styled for Kids',
     accent: 'Kids',

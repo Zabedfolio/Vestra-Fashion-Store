@@ -111,9 +111,9 @@ export default function Navbar() {
               </button>
               <div className="absolute left-0 mt-0 w-44 rounded-lg shadow-xl bg-white border border-zinc-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
-                  <Link href="/products/men" className="block px-4 py-2 text-sm text-dark hover:bg-zinc-50 font-body transition-colors">Men</Link>
-                  <Link href="/products/women" className="block px-4 py-2 text-sm text-dark hover:bg-zinc-50 font-body transition-colors">Women</Link>
-                  <Link href="/products/kids" className="block px-4 py-2 text-sm text-dark hover:bg-zinc-50 font-body transition-colors">Kids</Link>
+                  <Link href="/products?category=Men" className="block px-4 py-2 text-sm text-dark hover:bg-zinc-50 font-body transition-colors">Men</Link>
+                  <Link href="/products?category=Women" className="block px-4 py-2 text-sm text-dark hover:bg-zinc-50 font-body transition-colors">Women</Link>
+                  <Link href="/products?category=Kids" className="block px-4 py-2 text-sm text-dark hover:bg-zinc-50 font-body transition-colors">Kids</Link>
                 </div>
               </div>
             </div>
@@ -267,21 +267,21 @@ export default function Navbar() {
                 <span className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 font-heading">Categories</span>
                 <div className="pl-3 space-y-2 border-l border-zinc-150">
                   <Link
-                    href="/products/men"
+                    href="/products?category=Men"
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-sm font-semibold text-zinc-600 hover:text-primary transition-colors"
                   >
                     Men
                   </Link>
                   <Link
-                    href="/products/women"
+                    href="/products?category=Women"
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-sm font-semibold text-zinc-600 hover:text-primary transition-colors"
                   >
                     Women
                   </Link>
                   <Link
-                    href="/products/kids"
+                    href="/products?category=Kids"
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-sm font-semibold text-zinc-600 hover:text-primary transition-colors"
                   >
