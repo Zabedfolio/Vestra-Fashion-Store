@@ -4,6 +4,7 @@ import Discover from '../components/home/Discover';
 import CategoryGrid from '../components/home/CategoryGrid';
 import BrandHook from '../components/home/BrandHook';
 import FeaturedProducts from '../components/home/FeaturedProducts';
+import Testimonials from '../components/home/Testimonials';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <BrandHook />
       <FeaturedProducts />
       <Discover />
+      <Testimonials />
     </div>
   );
 }
