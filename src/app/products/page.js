@@ -2,6 +2,7 @@
 
 import React, { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import { products } from '../../data/products';
 import ProductCard from '../../components/ui/ProductCard';
 
@@ -9,6 +10,7 @@ import ProductCard from '../../components/ui/ProductCard';
 function ProductsContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get('category') || 'All';
+  const searchQuery = searchParams.get('search') || '';
 
   // Compute dynamic max price limit from data list
   const maxPriceLimit = products.length > 0 ? Math.max(...products.map((p) => p.price)) : 3000;
@@ -20,14 +22,15 @@ function ProductsContent() {
   const productsPerPage = 12;
   const categories = ['All', 'Men', 'Women', 'Kids'];
 
-  // 2. Simple filtering logic
+  // Simple filtering logic combining Category, Price, and Search Title
   const filteredProducts = products.filter((p) => {
     const matchesCategory = selectedCategory === 'All' || p.category === selectedCategory;
     const matchesPrice = p.price <= maxPriceFilter;
-    return matchesCategory && matchesPrice;
+    const matchesSearch = searchQuery === '' || p.name.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesPrice && matchesSearch;
   });
 
-  // 3. Simple pagination math
+  // Simple pagination math
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
   const startIndex = (currentPage - 1) * productsPerPage;
   const currentProducts = filteredProducts.slice(startIndex, startIndex + productsPerPage);
@@ -42,10 +45,17 @@ function ProductsContent() {
             Explore Vestra
           </p>
           <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-dark uppercase tracking-tight leading-none mb-4">
-            Shop <span className="text-[#C9FA75]">All</span>
+            {searchQuery ? (
+              <>Search <span className="text-[#C9FA75]">Results</span></>
+            ) : (
+              <>Shop <span className="text-[#C9FA75]">All</span></>
+            )}
           </h1>
           <p className="font-body text-zinc-500 text-sm sm:text-base max-w-xl leading-relaxed">
-            Discover our entire collection of premium essentials. Crafted for clean lines, modern styling, and long-lasting durability.
+            {searchQuery 
+              ? `Showing results for "${searchQuery}" across our collection of premium essentials.`
+              : 'Discover our entire collection of premium essentials. Crafted for clean lines, modern styling, and long-lasting durability.'
+            }
           </p>
         </div>
 
@@ -106,6 +116,14 @@ function ProductsContent() {
               ? `Showing ${startIndex + 1}–${Math.min(startIndex + productsPerPage, filteredProducts.length)} of ${filteredProducts.length} Products`
               : '0 Products found'}
           </span>
+          {searchQuery && (
+            <Link 
+              href="/products" 
+              className="text-xs text-red-500 hover:text-red-600 font-heading font-bold uppercase tracking-wider cursor-pointer"
+            >
+              Clear Search
+            </Link>
+          )}
         </div>
 
         {/* Products Grid */}

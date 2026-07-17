@@ -174,10 +174,14 @@ export default function Navbar() {
               <Magnifier className="w-5 h-5" />
             </button>
 
-            {/* Account Icon (Demo) */}
-            <div className="hidden sm:block text-dark p-2 hover:bg-zinc-100 rounded-full cursor-pointer transition">
-              <Person className="w-5 h-5" />
-            </div>
+            {/* Login Link */}
+            <Link 
+              href="/login" 
+              className="hidden sm:inline-flex items-center gap-1.5 px-4.5 py-2 border border-zinc-200 hover:border-dark text-dark text-xs font-heading font-bold uppercase tracking-wider rounded-full transition duration-200"
+            >
+              <Person className="w-4 h-4 text-dark" />
+              Login
+            </Link>
 
             {/* Wishlist Link */}
             <Link href="/products?wishlist=true" className="relative text-dark p-2 hover:bg-zinc-100 rounded-full transition">
@@ -336,6 +340,16 @@ export default function Navbar() {
                 }`}
               >
                 Contact Us
+              </Link>
+
+              <Link
+                href="/login"
+                onClick={() => setIsMenuOpen(false)}
+                className={`block text-base font-bold py-2 mt-4 text-center border border-zinc-200 hover:border-dark text-dark rounded-xl transition-all duration-200 ${
+                  pathname === '/login' ? 'bg-dark text-white border-dark' : ''
+                }`}
+              >
+                Sign In
               </Link>
             </div>
 
