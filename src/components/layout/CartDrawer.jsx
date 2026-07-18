@@ -10,7 +10,6 @@ export default function CartDrawer() {
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState([]);
 
-  // Load and sync cart from localStorage
   useEffect(() => {
     setCart(getCart());
 

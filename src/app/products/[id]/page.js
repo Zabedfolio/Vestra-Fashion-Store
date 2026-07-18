@@ -11,26 +11,21 @@ import ProductUnavailable from '../../../components/ui/ProductUnavailable';
 import { addToCart } from '../../../utils/cart';
 
 export default function ProductDetailPage() {
-  // 1. Get dynamic product ID from URL params simply
   const params = useParams();
   const productId = parseInt(params.id, 10);
 
-  // 2. Find product in data array
   const product = products.find((p) => p.id === productId);
 
-  // 3. Render unavailable card if not found
   if (!product) {
     return <ProductUnavailable />;
   }
 
-  // 4. Set up simple state variables
   const [selectedImage, setSelectedImage] = useState(product.image);
   const [selectedColor, setSelectedColor] = useState(product.colors?.[0] || '');
   const [selectedSize, setSelectedSize] = useState(product.sizes?.[0] || '');
   const [quantity, setQuantity] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
 
-  // 5. Get related products
   const relatedProducts = products
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);

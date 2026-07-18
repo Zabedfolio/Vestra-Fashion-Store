@@ -1,5 +1,4 @@
 export const products = [
-  // MEN SECTION (11 products)
   {
     id: 1,
     name: "Classic Cotton Panjabi",
@@ -243,7 +242,6 @@ export const products = [
     description: "Premium French Terry joggers featuring an elastic waistband with drawstrings, zipper pockets, and tapered ribbed cuffs. Ideal for workouts or off-duty comfort."
   },
 
-  // WOMEN SECTION (10 products)
   {
     id: 12,
     name: "Floral Tiered Summer Dress",
@@ -465,7 +463,6 @@ export const products = [
     description: "High-waisted compression leggings in sweat-wicking knit fabric. Seamless construction prevents chafing during yoga or high-intensity training."
   },
 
-  // KIDS SECTION (11 products)
   {
     id: 23,
     name: "Printed Cotton T-Shirt",

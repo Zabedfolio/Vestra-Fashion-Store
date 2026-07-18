@@ -6,13 +6,11 @@ import Link from 'next/link';
 import { products } from '../../data/products';
 import ProductCard from '../../components/ui/ProductCard';
 
-// Inner component — safe to use useSearchParams() here
 function ProductsContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get('category') || 'All';
   const searchQuery = searchParams.get('search') || '';
 
-  // Compute dynamic max price limit from data list
   const maxPriceLimit = products.length > 0 ? Math.max(...products.map((p) => p.price)) : 3000;
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,7 +20,6 @@ function ProductsContent() {
   const productsPerPage = 12;
   const categories = ['All', 'Men', 'Women', 'Kids'];
 
-  // Simple filtering logic combining Category, Price, and Search Title
   const filteredProducts = products.filter((p) => {
     const matchesCategory = selectedCategory === 'All' || p.category === selectedCategory;
     const matchesPrice = p.price <= maxPriceFilter;
@@ -30,7 +27,6 @@ function ProductsContent() {
     return matchesCategory && matchesPrice && matchesSearch;
   });
 
-  // Simple pagination math
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
   const startIndex = (currentPage - 1) * productsPerPage;
   const currentProducts = filteredProducts.slice(startIndex, startIndex + productsPerPage);
@@ -72,7 +68,7 @@ function ProductsContent() {
                   type="button"
                   onClick={() => {
                     setSelectedCategory(category);
-                    setCurrentPage(1); // Go back to page 1
+                    setCurrentPage(1); 
                   }}
                   className={`px-5 py-2.5 rounded-full text-xs font-heading font-bold uppercase tracking-wider transition-all duration-200 border cursor-pointer ${
                     isActive
@@ -100,7 +96,7 @@ function ProductsContent() {
                 value={maxPriceFilter}
                 onChange={(e) => {
                   setMaxPriceFilter(Number(e.target.value));
-                  setCurrentPage(1); // Go back to page 1
+                  setCurrentPage(1); 
                 }}
                 className="w-full h-1 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-dark"
               />
@@ -198,7 +194,6 @@ function ProductsContent() {
   );
 }
 
-// Default export wraps in Suspense — required by Next.js when using useSearchParams
 export default function ProductsPage() {
   return (
     <Suspense fallback={

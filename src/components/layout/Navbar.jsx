@@ -14,7 +14,6 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
   const [wishlistCount, setWishlistCount] = useState(0);
 
-  // Sync cart count from localStorage
   useEffect(() => {
     const updateCartCount = () => {
       try {
@@ -29,9 +28,7 @@ export default function Navbar() {
 
     updateCartCount();
 
-    // Listen to custom cart-change events
     window.addEventListener('cart-change', updateCartCount);
-    // Listen to storage events for cross-tab syncing
     window.addEventListener('storage', updateCartCount);
 
     return () => {
@@ -40,7 +37,6 @@ export default function Navbar() {
     };
   }, []);
 
-  // Sync wishlist count from localStorage
   useEffect(() => {
     const updateWishlistCount = () => {
       try {
@@ -58,9 +54,7 @@ export default function Navbar() {
 
     updateWishlistCount();
 
-    // Listen to storage events to keep sync if added in another tab/component
     window.addEventListener('storage', updateWishlistCount);
-    // Listen to custom wishlist events dispatched inside product cards
     window.addEventListener('wishlist-updated', updateWishlistCount);
     
     return () => {

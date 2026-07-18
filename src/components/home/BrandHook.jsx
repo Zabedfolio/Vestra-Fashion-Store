@@ -54,7 +54,6 @@ export default function BrandHook() {
     "VESTRA STUDIO",
   ];
 
-  // Repeat phrases for horizontal looping
   const doubledPhrases = [...tickerPhrases, ...tickerPhrases, ...tickerPhrases, ...tickerPhrases];
 
   return (
